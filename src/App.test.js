@@ -2,8 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders sign in link', async () => {
+  const { findByText } = render(<App />);
+  expect(await findByText(/sign in with google/i)).toBeInTheDocument();
 });
